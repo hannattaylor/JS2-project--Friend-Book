@@ -1,0 +1,35 @@
+[
+  {
+    "id": 0,
+    "img": "",
+    "name": "Leslie",
+    "nickname": "Presley, Snuttan",
+    "birthday": "9 maj",
+    "zodiacSign": "Oxe",
+    "hairColor": "Grått",
+    "eyecolor": "Gulgröna",
+    "animalBreed": "Sibirisk/Ragdoll/Norsk skogskatt",
+    "happy": "Godis!!",
+    "sad": "när jag måste vara ensam hemma",
+    "interests": "springa, hoppa, klättra, tvätta pälsen",
+    "favoriteFood": "Fisktacos",
+    "aspirations": "storasyster!"
+  },
+  {
+    "id": 1,
+    "img": "",
+    "name": "Diablo",
+    "nickname": "Babsan, Sussi",
+    "age": 2,
+    "birthday": "20 augusti",
+    "zodiacSign": "Lejon",
+    "hairColor": "Svart, lite gråa om nosen",
+    "eyecolor": "Mörka",
+    "animalBreed": "Dvärgtax",
+    "happy": "När jag får vara inne i träjan på mina mattar",
+    "sad": "nrä jag ser en katt, hatar katten!!",
+    "interests": "Skrämma livet ur katter, mucka gräl med större hundar",
+    "favoriteFood": "Chips!",
+    "aspirations": "ännu coolare"
+  }
+]
