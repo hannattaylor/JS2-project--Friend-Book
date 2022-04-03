@@ -12,7 +12,9 @@ const friendReducer = (state = initialState, action) => {
     case "REMOVE_FRIEND":
       return {
         ...state,
-        friendList: [...state.friendList, -action.object],
+        friendList: [
+          ...state.friendList.filter((friend) => friend !== action.object),
+        ],
       };
     default:
       return state;
