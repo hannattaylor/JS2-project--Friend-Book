@@ -1,8 +1,9 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Start from "./pages/Start";
-import Friends from "./pages/Friends";
+import FriendPage from "./pages/FriendPage";
 import NewFriend from "./pages/NewFriend";
+import TableOfFriends from "./pages/TableOfFriends";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addFriend } from "./actions/friendAction";
@@ -29,7 +30,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Start />} />
-        <Route path="/friends" element={<Friends />} />
+        <Route path="/tableoffriends" element={<TableOfFriends />} />
+        <Route path="/friends" element={<FriendPage />} />
         <Route path="/newfriend" element={<NewFriend />} />
       </Routes>
     </Router>

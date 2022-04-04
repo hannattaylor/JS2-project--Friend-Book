@@ -31,6 +31,7 @@ export default function InputFields(prop) {
         <label htmlFor={prop.list[0]}>{foundLabel[1]}</label>
         <input
           className={prop.list[0]}
+          autoComplete="off"
           type="text"
           id={prop.list[0]}
           name={prop.list[0]}
