@@ -1,13 +1,12 @@
 [
   {
-    "id": 0,
     "img": "",
     "name": "Leslie",
     "nickname": "Presley, Snuttan",
     "birthday": "9 maj",
     "zodiacSign": "Oxe",
     "hairColor": "Grått",
-    "eyecolor": "Gulgröna",
+    "eyeColor": "Gulgröna",
     "animalBreed": "Sibirisk/Ragdoll/Norsk skogskatt",
     "happy": "Godis!!",
     "sad": "när jag måste vara ensam hemma",
@@ -18,15 +17,13 @@
     "aspirations": "storasyster!"
   },
   {
-    "id": 1,
     "img": "",
     "name": "Diablo",
     "nickname": "Babsan, Sussi",
-    "age": 2,
     "birthday": "20 augusti",
     "zodiacSign": "Lejon",
     "hairColor": "Svart, lite gråa om nosen",
-    "eyecolor": "Mörka",
+    "eyeColor": "Mörka",
     "animalBreed": "Dvärgtax",
     "happy": "När jag får vara inne i träjan på mina mattar",
     "sad": "när jag ser en katt, hatar katter!!",

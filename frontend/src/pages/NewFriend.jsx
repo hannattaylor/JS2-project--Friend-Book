@@ -22,7 +22,7 @@ export default function NewFriend() {
     ["favoriteFood", ""],
     ["favoriteAnimal", ""],
     ["myIdol", ""],
-    ["apsirations", ""],
+    ["aspirations", ""],
   ]);
 
   function handleInputChange(input, prop) {

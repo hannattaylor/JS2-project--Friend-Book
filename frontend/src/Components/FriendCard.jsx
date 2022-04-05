@@ -1,32 +1,27 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import OutputFields from "./OutputFields";
+import { useSelector } from "react-redux";
 
 export default function FriendCard(props) {
-  let friend = props.friend;
-  let index = props.index;
-  console.log(friend[index]);
+  const state = useSelector((state) => {
+    return state.friendList;
+  });
 
-  const [formLabel] = useState([
-    ["name", "Mitt namn är "],
-    ["nickname", "Jag kallas även "],
-    ["birthday", "Min födelsedag är den "],
-    ["zodiacSign", "Mitt stjärntecken är "],
-    ["hairColor", "Hårfärg: "],
-    ["eyeColor", "Ögonfärg: "],
-    ["animalBreed", "Jag är "],
-    ["happy", "Jag blir glad när "],
-    ["sad", "Jag blir arg när "],
-    ["interests", "Mina intressen är "],
-    ["favoriteFood", "Favoritmat: "],
-    ["favoriteAnimal", "Favoritdjur: "],
-    ["myIdol", "Min stora idol är "],
-    ["apsirations", "Min dröm är att bli "],
-  ]);
+  const page = props.page;
+  console.log(state[page]);
+
+  const friendList = Object.entries(state[page]); //gör om obejct till array för att kunna loopa över
+  console.log(friendList);
+
   return (
     <div>
-      <h5>{friend[index].name}</h5>
       <img />
-      <button onClick={() => props.handleRemoveFriend(friend[index])}>
+      {friendList.map((item, i) => (
+        <OutputFields key={i} item={item} />
+      ))}
+
+      <button onClick={() => props.handleRemoveFriend(state[page])}>
         Ta bort vän
       </button>
     </div>

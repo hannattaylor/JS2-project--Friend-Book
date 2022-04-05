@@ -2,16 +2,16 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import FriendCard from "../Components/FriendCard";
 import { breakUpWithFriend } from "../actions/friendAction";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Friends() {
+  const navigate = useNavigate();
   const state = useSelector((state) => {
     return state.friendList;
   });
   const [page, setPage] = useState(0);
-  console.log(state);
+
   const [friend, setFriends] = useState([state]);
-  console.log(friend);
 
   useEffect(() => {
     let stateCopy = [...state];
@@ -34,7 +34,13 @@ export default function Friends() {
 
   function handleRemoveFriend(friend) {
     //lägga till så att om listan är tom kommer man auto till new friend?
-    dispatch(breakUpWithFriend(friend));
+    if (state.length === 1) {
+      dispatch(breakUpWithFriend(friend));
+      navigate("/tableoffriends");
+    } else {
+      dispatch(breakUpWithFriend(friend));
+    }
+
     if (page === 0) {
       setPage((prevNum) => Math.max(prevNum, 0));
     } else {
@@ -45,11 +51,7 @@ export default function Friends() {
   return (
     <div>
       <h1>My Friends</h1>
-      <FriendCard
-        handleRemoveFriend={handleRemoveFriend}
-        friend={friend}
-        index={page}
-      />
+      <FriendCard handleRemoveFriend={handleRemoveFriend} page={page} />
       <button onClick={() => setPage((prevNum) => Math.max(prevNum - 1, 0))}>
         Tillbaka
       </button>
