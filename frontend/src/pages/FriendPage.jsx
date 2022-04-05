@@ -49,8 +49,7 @@ export default function Friends() {
   }
 
   return (
-    <div>
-      <h1>My Friends</h1>
+    <main>
       <FriendCard handleRemoveFriend={handleRemoveFriend} page={page} />
       <button onClick={() => setPage((prevNum) => Math.max(prevNum - 1, 0))}>
         Tillbaka
@@ -62,6 +61,6 @@ export default function Friends() {
       >
         Nästa
       </button>
-    </div>
+    </main>
   );
 }

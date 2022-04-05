@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addFriend } from "../actions/friendAction";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import InputFields from "../Components/InputFields";
 
 export default function NewFriend() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [friendForm, setFriendForm] = useState([
     ["img", ""],
@@ -50,6 +51,29 @@ export default function NewFriend() {
   const obj = Object.fromEntries(friendForm);
   console.log(obj);
 
+  function required() {
+    let empty = friendForm.includes();
+    console.log(empty);
+
+    if (empty) {
+      console.log("det saknas data");
+    } else {
+      console.log("allt är ifyllt");
+      dispatch(addFriend(obj));
+      navigate("/tableoffriends");
+    }
+    // friendForm.map((input) => {
+    //   if (input[1] === "") {
+    //     console.log("Det saknas data");
+    //   } else {
+    //     dispatch(addFriend(obj));
+    //     navigate("/tableoffriends");
+    //   }
+    // });
+
+    //navigate to /tableoffriends
+  }
+
   return (
     <main>
       <h1>Lägg till vän</h1>
@@ -64,9 +88,8 @@ export default function NewFriend() {
           handleInputChange={handleInputChange}
         />
       ))}
-      <Link to="/friends">
-        <button onClick={() => dispatch(addFriend(obj))}>Skicka in</button>
-      </Link>
+
+      <button onClick={() => required()}>Skicka in</button>
     </main>
   );
 }

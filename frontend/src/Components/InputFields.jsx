@@ -24,14 +24,13 @@ export default function InputFields(prop) {
   ]);
 
   let foundLabel = formLabel.find((el) => el[0] === prop.list[0]);
-  console.log(foundLabel);
 
   if (prop.list[0] !== "img") {
     return (
       <section>
         <label htmlFor={prop.list[0]}>{foundLabel[1]}</label>
         <input
-          className={prop.list[0]}
+          className="input-field"
           autoComplete="off"
           type="text"
           id={prop.list[0]}

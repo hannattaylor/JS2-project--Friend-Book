@@ -1,0 +1,41 @@
+* {
+  text-decoration: none;
+}
+body {
+  background-color: #d9d995;
+}
+
+.bigWrap {
+  background-color: #d9d995;
+  padding: 2rem;
+  width: 60%;
+  margin: 20vh auto;
+  text-align: center;
+}
+
+.h1 {
+  font-size: 3rem;
+  color: #5d3b6e;
+  margin: 0;
+}
+.img:hover {
+  transform: rotate(10deg);
+}
+
+@media only screen and (max-width: 600px) {
+  .bigWrap {
+    background-image: url("../bookcover.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 17vh;
+    padding-left: 0;
+  }
+  .img {
+    max-width: 17rem;
+    margin-left: 10vw;
+  }
+}

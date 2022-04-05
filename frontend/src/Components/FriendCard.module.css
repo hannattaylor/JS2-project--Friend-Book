@@ -1,0 +1,13 @@
+.frame {
+  position: relative;
+  width: 15rem;
+  height: 17rem;
+  background-image: url("../frame.svg");
+  background-size: cover;
+}
+.img {
+  position: relative;
+  width: 7rem;
+  padding-left: 4rem;
+  padding-top: 5.5rem;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import OutputFields from "./OutputFields";
 import { useSelector } from "react-redux";
+import styles from "./FriendCard.module.css";
 
 export default function FriendCard(props) {
   const state = useSelector((state) => {
@@ -16,7 +17,9 @@ export default function FriendCard(props) {
 
   return (
     <div>
-      <img />
+      <section className={styles.frame}>
+        <img className={styles.img} src={state[page].img} />
+      </section>
       {friendList.map((item, i) => (
         <OutputFields key={i} item={item} />
       ))}
