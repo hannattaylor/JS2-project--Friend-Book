@@ -1,13 +1,72 @@
-.frame {
-  position: relative;
-  width: 15rem;
-  height: 17rem;
-  background-image: url("../frame.svg");
-  background-size: cover;
+@media only screen and (min-width: 520px) {
+  .main {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 1rem;
+    width: 58rem;
+    height: 38rem;
+    padding: 1rem;
+  }
+
+  .frame {
+    background-image: url("../frame.svg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    grid-column: 1;
+    grid-row: 1 / 4;
+  }
+  .removeFriend {
+    margin-right: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    grid-column: 4/ 5;
+    grid-row: 1/ 2;
+    border: none;
+    background: transparent;
+    background-image: url("../eraser\ \(1\).png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-self: center;
+    justify-self: end;
+  }
+  .img {
+    max-width: 8rem;
+    padding: 2.2rem 2.8rem;
+  }
 }
-.img {
-  position: relative;
-  width: 7rem;
-  padding-left: 4rem;
-  padding-top: 5.5rem;
+
+@media only screen and (max-width: 520px) {
+  .main {
+    padding-top: 1.5rem;
+  }
+  .frame {
+    position: relative;
+    width: 15rem;
+    height: 17rem;
+    background-image: url("../frame.svg");
+    background-size: cover;
+    background-position: center;
+  }
+  .img {
+    max-width: 8rem;
+    padding: 2.2rem 2.8rem;
+  }
+
+  .removeFriend {
+    width: 2rem;
+    height: 2rem;
+    padding: 1rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border: none;
+    background: transparent;
+    background-image: url("../eraser\ \(1\).png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  /* GÖra en animation hover så den rör sig fram och tillbaka, fast på desktop  */
 }

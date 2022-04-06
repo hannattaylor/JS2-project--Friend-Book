@@ -16,7 +16,7 @@ export default function FriendCard(props) {
   console.log(friendList);
 
   return (
-    <div>
+    <main className={styles.main}>
       <section className={styles.frame}>
         <img className={styles.img} src={state[page].img} />
       </section>
@@ -24,9 +24,10 @@ export default function FriendCard(props) {
         <OutputFields key={i} item={item} />
       ))}
 
-      <button onClick={() => props.handleRemoveFriend(state[page])}>
-        Ta bort vän
-      </button>
-    </div>
+      <button
+        className={styles.removeFriend}
+        onClick={() => props.handleRemoveFriend(state[page])}
+      ></button>
+    </main>
   );
 }

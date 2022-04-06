@@ -1,24 +1,27 @@
 import React from "react";
 import { useState } from "react";
+import styles from "./OutputFields.module.css";
 
 export default function OutputFields(props) {
   console.log(props);
+  let prop = props.item[0];
 
   const [formLabel] = useState([
     ["name", "Mitt namn är "],
-    ["nickname", "Jag kallas även "],
+    ["date", "Dagens datum "],
+    ["nickname", "Smeknamn "],
     ["birthday", "Min födelsedag är den "],
-    ["zodiacSign", "Mitt stjärntecken är "],
+    ["zodiacSign", "Stjärntecken "],
     ["hairColor", "Hårfärg: "],
     ["eyeColor", "Ögonfärg: "],
-    ["animalBreed", "Jag är "],
-    ["happy", "Jag blir glad när "],
-    ["sad", "Jag blir arg när "],
-    ["interests", "Mina intressen är "],
+    ["animalBreed", "Jag är (vilket djur) "],
+    ["happy", "Det bästa jag vet "],
+    ["sad", "Det värsta jag vet "],
+    ["interests", "Mina intressen "],
     ["favoriteFood", "Favoritmat: "],
     ["favoriteAnimal", "Favoritdjur: "],
     ["myIdol", "Min stora idol är "],
-    ["aspirations", "Min dröm är att bli "],
+    ["aspirations", "Jag vill bli "],
   ]);
 
   const foundLabel = formLabel.find((el) => el[0] === props.item[0]);
@@ -26,9 +29,11 @@ export default function OutputFields(props) {
 
   if (props.item[0] !== "img") {
     return (
-      <article style={{ display: "flex", gap: "1rem" }}>
-        <h3>{foundLabel[1]}</h3>
-        <h5>{props.item[1]}</h5>
+      <article className={styles[prop]}>
+        <h3 className={styles.label}>{foundLabel[1]}</h3>
+        {/* <div className={styles.answerWrap}> */}
+        <h5 className={styles.answer}>{props.item[1]}</h5>
+        {/* </div> */}
       </article>
     );
   }

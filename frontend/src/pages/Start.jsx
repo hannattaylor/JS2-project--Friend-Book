@@ -6,10 +6,12 @@ import frameWithFriend from "../frame-with-friend.svg";
 export default function Start() {
   return (
     <Link to="/tableoffriends">
-      <section className={styles.bigWrap}>
-        <h1 className={styles.h1}>Mina vänner</h1>
-        <img className={styles.img} src={frameWithFriend} alt="" />
-      </section>
+      <main className={styles.main}>
+        <section className={styles.bigWrap}>
+          <h1 className={styles.h1}>Mina vänner</h1>
+          <img className={styles.img} src={frameWithFriend} alt="" />
+        </section>
+      </main>
     </Link>
   );
 }

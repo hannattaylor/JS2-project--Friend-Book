@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { addFriend } from "../actions/friendAction";
 import { Link, useNavigate } from "react-router-dom";
 import InputFields from "../Components/InputFields";
+import styles from "./NewFriend.module.css";
 
 export default function NewFriend() {
   const dispatch = useDispatch();
@@ -10,6 +11,7 @@ export default function NewFriend() {
 
   const [friendForm, setFriendForm] = useState([
     ["img", ""],
+    ["date", ""],
     ["name", ""],
     ["nickname", ""],
     ["birthday", ""],
@@ -73,23 +75,37 @@ export default function NewFriend() {
 
     //navigate to /tableoffriends
   }
-
+  //göra en funktion så att när ett value är tomt blir det auto "ingen kommentar"
   return (
-    <main>
-      <h1>Lägg till vän</h1>
-      <section>
-        <img style={{ width: "20rem" }} id="file-preview" src="" alt="" />
-      </section>
-      <input type="file" accept="image/*" onChange={(e) => addImage(e)} />
-      {friendForm.map((list, i) => (
-        <InputFields
-          key={i}
-          list={list}
-          handleInputChange={handleInputChange}
-        />
-      ))}
-
-      <button onClick={() => required()}>Skicka in</button>
+    <main className={styles.main}>
+      <div className={styles.bookWrap}>
+        <section className={styles.formWrap}>
+          <section className={styles.frame}>
+            <img
+              className={styles.imgPreview}
+              id="file-preview"
+              src=""
+              alt=""
+            />
+          </section>
+          <input
+            className={styles.fileInput}
+            type="file"
+            accept="image/*"
+            onChange={(e) => addImage(e)}
+          />
+          {friendForm.map((list, i) => (
+            <InputFields
+              key={i}
+              list={list}
+              handleInputChange={handleInputChange}
+            />
+          ))}
+          <button className={styles.sendBtn} onClick={() => required()}>
+            Lägg till vän
+          </button>
+        </section>
+      </div>
     </main>
   );
 }

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import FriendCard from "../Components/FriendCard";
 import { breakUpWithFriend } from "../actions/friendAction";
 import { useLocation, useNavigate } from "react-router-dom";
+import styles from "./FriendPage.module.css";
 
 export default function Friends() {
   const navigate = useNavigate();
@@ -41,26 +42,39 @@ export default function Friends() {
       dispatch(breakUpWithFriend(friend));
     }
 
+    // if (page === 0) {
+    //   setPage((prevNum) => Math.max(prevNum, 0));
+    // } else {
+    //   setPage((prevNum) => Math.max(prevNum - 1, 0));
+    // }
+  }
+
+  function goBack() {
     if (page === 0) {
-      setPage((prevNum) => Math.max(prevNum, 0));
+      navigate("/tableoffriends");
     } else {
       setPage((prevNum) => Math.max(prevNum - 1, 0));
     }
   }
 
   return (
-    <main>
-      <FriendCard handleRemoveFriend={handleRemoveFriend} page={page} />
-      <button onClick={() => setPage((prevNum) => Math.max(prevNum - 1, 0))}>
-        Tillbaka
-      </button>
-      <button
-        onClick={() =>
-          setPage((prevNum) => Math.min(prevNum + 1, state.length - 1))
-        }
-      >
-        Nästa
-      </button>
+    <main className={styles.main}>
+      <section className={styles.book}>
+        <FriendCard handleRemoveFriend={handleRemoveFriend} page={page} />
+      </section>
+      <section className={styles.buttonsContainer}>
+        <button className={styles.prevButton} onClick={() => goBack()}>
+          Tillbaka
+        </button>
+        <button
+          className={styles.nextButton}
+          onClick={() =>
+            setPage((prevNum) => Math.min(prevNum + 1, state.length - 1))
+          }
+        >
+          Nästa
+        </button>
+      </section>
     </main>
   );
 }
