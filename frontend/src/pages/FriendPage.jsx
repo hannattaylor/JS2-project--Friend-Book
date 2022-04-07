@@ -34,7 +34,6 @@ export default function Friends() {
   const dispatch = useDispatch();
 
   function handleRemoveFriend(friend) {
-    //lägga till så att om listan är tom kommer man auto till new friend?
     if (state.length === 1) {
       dispatch(breakUpWithFriend(friend));
       navigate("/tableoffriends");
@@ -42,11 +41,11 @@ export default function Friends() {
       dispatch(breakUpWithFriend(friend));
     }
 
-    // if (page === 0) {
-    //   setPage((prevNum) => Math.max(prevNum, 0));
-    // } else {
-    //   setPage((prevNum) => Math.max(prevNum - 1, 0));
-    // }
+    if (page === 0) {
+      setPage((prevNum) => Math.max(prevNum, 0));
+    } else {
+      setPage((prevNum) => Math.max(prevNum - 1, 0));
+    }
   }
 
   function goBack() {

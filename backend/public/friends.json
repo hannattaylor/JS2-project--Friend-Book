@@ -1,6 +1,6 @@
 [
   {
-    "img": "../thecat.png",
+    "img": "https://image.posterlounge.se/images/big/1882267.jpg",
     "date": "22/2 -22",
     "name": "Leslie",
     "nickname": "Presley, Bumlan",
@@ -18,14 +18,14 @@
     "aspirations": "storasyster!"
   },
   {
-    "img": "",
+    "img": "http://cdn.simplesite.com/i/d6/1c/285415631965986006/i285415639402525608._szw480h1280_.jpg",
     "date": "22/2 -22",
     "name": "Diablo",
     "nickname": "Babsan, Sussi",
     "birthday": "20 augusti",
     "zodiacSign": "Lejon",
     "hairColor": "Svart, lite grå om nosen",
-    "eyeColor": "Mörka",
+    "eyeColor": "Svart",
     "animalBreed": "Dvärgtax",
     "happy": "När jag får ha sovmorgon",
     "sad": "katter, hatar katter!!",

@@ -1,71 +1,87 @@
-.main {
-  align-items: center;
-}
-
-.bookWrap {
-  position: absolute;
-  top: 1rem;
-  left: calc((100% - 60rem) / 2);
-  background-image: url("../open-book-2.svg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  border-radius: 5px;
-  width: 60rem;
-  height: 43rem;
-}
-
-.formWrap {
-  position: absolute;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-  gap: 1rem;
-  width: 58rem;
-  height: 38rem;
-  padding: 1rem;
-}
-
-.frame {
-  background-image: url("../frame.svg");
-  background-size: 95%;
-  background-position: center;
-  grid-column: 1;
-  grid-row: 1 / 4;
-}
-
-.imgPreview {
-  max-width: 8rem;
-  padding: 2.2rem 2.8rem;
-}
-
-.fileInput {
-  grid-column: 1/ 2;
-  grid-row: 3 / 4;
-  z-index: 1;
-}
-.sendBtn {
-  grid-column: 4 / 5;
-  grid-row: 8 / 9;
-  font-size: 2rem;
-  border: none;
-  background-color: transparent;
-}
-
-@media only screen and (max-width: 520px) {
+@media only screen and (min-width: 990px) {
   .main {
-    width: 100%;
-    height: 100%;
-    background-image: url("../open-book-2.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    align-items: center;
   }
-  .h1 {
-    margin: 0;
-    padding: 2rem;
+
+  .bookWrap {
+    position: absolute;
+    top: 1rem;
+    left: calc((100% - 60rem) / 2);
+    background-image: url("../open-book-2.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 5px;
+    width: 60rem;
+    height: 43rem;
   }
 
   .formWrap {
-    margin-left: 2rem;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 1rem;
+    width: 58rem;
+    height: 38rem;
+    padding: 1rem;
+  }
+
+  .frame {
+    background-image: url("../frame.svg");
+    background-size: 95%;
+    background-position: center;
+    grid-column: 1;
+    grid-row: 1 / 4;
+  }
+
+  .imgPreview {
+    max-width: 8rem;
+    padding: 2.2rem 2.8rem;
+  }
+
+  .fileInput {
+    position: absolute;
+    top: 3rem;
+    left: 2rem;
+    grid-column: 1/ 2;
+    grid-row: 3 / 4;
+    z-index: 1;
+  }
+  .sendBtn {
+    grid-column: 4 / 5;
+    grid-row: 8 / 9;
+    font-size: 2rem;
+    border: none;
+    background-color: transparent;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .main {
+    width: 100%;
+    height: 100%;
+    background-image: url("../one-page-mobile.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+  }
+
+  .frame {
+    width: 14rem;
+    height: 15rem;
+    margin: 0 auto;
+    background-image: url("../frame.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    grid-column: 1;
+    grid-row: 1 / 4;
+  }
+
+  .h1 {
+    margin: 0;
+    padding: 2rem;
   }
 
   .imgPreview {
@@ -74,6 +90,7 @@
 
   .fileInput {
     border: none;
+    margin: 0 auto;
   }
 
   .sendBtn {

@@ -1,0 +1,52 @@
+.main {
+  align-items: center;
+}
+
+.bookWrap {
+  position: absolute;
+  top: 1rem;
+  left: calc((100% - 60rem) / 2);
+  background-image: url("../open-book-2.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 5px;
+  width: 60rem;
+  height: 43rem;
+}
+
+.formWrap {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  gap: 1rem;
+  width: 58rem;
+  height: 38rem;
+  padding: 1rem;
+}
+
+.frame {
+  background-image: url("../frame.svg");
+  background-size: 95%;
+  background-position: center;
+  grid-column: 1;
+  grid-row: 1 / 4;
+}
+
+.imgPreview {
+  max-width: 8rem;
+  padding: 2.2rem 2.8rem;
+}
+
+.fileInput {
+  grid-column: 1/ 2;
+  grid-row: 3 / 4;
+  z-index: 1;
+}
+.sendBtn {
+  grid-column: 4 / 5;
+  grid-row: 8 / 9;
+  font-size: 2rem;
+  border: none;
+  background-color: transparent;
+}

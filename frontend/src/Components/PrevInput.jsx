@@ -4,7 +4,11 @@ import React from "react";
 import { useState } from "react";
 import styles from "./InputFields.module.css";
 
-export default function InputFields(prop) {
+//hoppa över input img,
+
+export default function PrevInput(prop) {
+  const prevInput = prop.prevInput;
+
   const [formLabel] = useState([
     ["name", "Mitt namn är "],
     ["date", "Dagens datum "],
@@ -24,6 +28,7 @@ export default function InputFields(prop) {
   ]);
 
   let foundLabel = formLabel.find((el) => el[0] === prop.list[0]);
+  let foundPrevInput = prevInput.find((el) => el[0] === prop.list[0]);
 
   if (prop.list[0] !== "img") {
     return (
@@ -38,6 +43,7 @@ export default function InputFields(prop) {
           id={prop.list[0]}
           name={prop.list[0]}
           onChange={(e) => prop.handleInputChange(e.target, prop.list)}
+          defaultValue={foundPrevInput[1]}
         />
       </article>
     );

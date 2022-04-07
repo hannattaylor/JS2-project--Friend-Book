@@ -1,35 +1,37 @@
-.main {
-  text-align: center;
+@media only screen and (min-width: 990px) {
+  .main {
+    text-align: center;
+  }
+
+  .book {
+    position: absolute;
+    top: 1rem;
+    left: calc((100% - 60rem) / 2);
+    background-image: url("../open-book-2.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 5px;
+    width: 60rem;
+    height: 43rem;
+  }
+
+  .buttonsContainer {
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  .prevButton,
+  .nextButton {
+    width: 7rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+
+    border: none;
+    background-color: transparent;
+  }
 }
 
-.book {
-  position: absolute;
-  top: 1rem;
-  left: calc((100% - 60rem) / 2);
-  background-image: url("../open-book-2.svg");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  border-radius: 5px;
-  width: 60rem;
-  height: 43rem;
-}
-
-.buttonsContainer {
-  margin: 1rem;
-  display: flex;
-  justify-content: space-between;
-}
-.prevButton,
-.nextButton {
-  width: 7rem;
-  padding: 1rem;
-  font-size: 1.5rem;
-
-  border: none;
-  background-color: transparent;
-}
-
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 990px) {
   .main {
     background-image: url("../one-page-mobile.svg");
     background-position: center;
@@ -40,13 +42,18 @@
     padding-bottom: 2rem;
     text-align: center;
   }
+  .buttonsContainer {
+    position: absolute;
+    width: 100%;
+    top: 1rem;
+  }
   .prevButton,
   .nextButton {
     background-color: pink;
     border: none;
     border-radius: 5px;
-    padding: 1rem;
-    margin: 1rem;
+    padding: 0.1rem 1rem;
+    margin: 0 1rem;
     font-size: 1.4rem;
   }
 }

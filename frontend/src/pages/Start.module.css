@@ -7,37 +7,40 @@ body {
   background-size: cover;
   background-position: top;
 }
-.main {
-  width: 100%;
-  height: 100vh;
-  /* background-color: rgba(224, 114, 24, 0.4); */
 
-  margin: 0;
-  padding: 2rem;
+@media only screen and (min-width: 990px) {
+  .main {
+    width: 100%;
+    height: 100vh;
+    /* background-color: rgba(224, 114, 24, 0.4); */
+
+    margin: 0;
+    padding: 2rem;
+  }
+
+  .bigWrap {
+    background-image: url("../book-cover.svg");
+    background-size: cover;
+    border-radius: 0 5px 5px 0;
+    padding: 2rem;
+    width: 30rem;
+    height: 80vh;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 8px 8px 10px rgb(116, 68, 14);
+  }
+
+  .h1 {
+    font-size: 3rem;
+    color: #5d3b6e;
+    margin: 0;
+  }
+  .img:hover {
+    transform: rotate(10deg);
+  }
 }
 
-.bigWrap {
-  background-image: url("../book-cover.svg");
-  background-size: cover;
-  border-radius: 0 5px 5px 0;
-  padding: 2rem;
-  width: 30rem;
-  height: 80vh;
-  margin: 0 auto;
-  text-align: center;
-  box-shadow: 8px 8px 10px rgb(116, 68, 14);
-}
-
-.h1 {
-  font-size: 3rem;
-  color: #5d3b6e;
-  margin: 0;
-}
-.img:hover {
-  transform: rotate(10deg);
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 990px) {
   .bigWrap {
     background-image: url("../bookcover.svg");
     background-repeat: no-repeat;
@@ -48,6 +51,9 @@ body {
     text-align: center;
     padding-top: 17vh;
     padding-left: 0;
+  }
+  .h1 {
+    font-size: 3rem;
   }
   .img {
     max-width: 17rem;

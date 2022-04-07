@@ -16,6 +16,12 @@ const friendReducer = (state = initialState, action) => {
           ...state.friendList.filter((friend) => friend !== action.object),
         ],
       };
+    case "UPDATE_FRIEND":
+      let foundFriend = state.find((el) => el.name === action.object.name);
+      console.log(foundFriend);
+      return {
+        ...state,
+      };
     default:
       return state;
   }

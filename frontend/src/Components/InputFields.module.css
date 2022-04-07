@@ -144,7 +144,7 @@
   }
   .input {
     border: none;
-    width: 50%;
+    width: 100%;
     background: transparent;
     border-bottom: 1px dotted black;
     font-family: "Crafty Girls", cursive;

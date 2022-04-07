@@ -64,18 +64,8 @@ export default function NewFriend() {
       dispatch(addFriend(obj));
       navigate("/tableoffriends");
     }
-    // friendForm.map((input) => {
-    //   if (input[1] === "") {
-    //     console.log("Det saknas data");
-    //   } else {
-    //     dispatch(addFriend(obj));
-    //     navigate("/tableoffriends");
-    //   }
-    // });
-
-    //navigate to /tableoffriends
   }
-  //göra en funktion så att när ett value är tomt blir det auto "ingen kommentar"
+
   return (
     <main className={styles.main}>
       <div className={styles.bookWrap}>

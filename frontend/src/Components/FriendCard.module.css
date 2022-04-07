@@ -1,4 +1,4 @@
-@media only screen and (min-width: 520px) {
+@media only screen and (min-width: 990px) {
   .main {
     position: absolute;
     display: grid;
@@ -11,6 +11,7 @@
   }
 
   .frame {
+    height: 16rem;
     background-image: url("../frame.svg");
     background-size: cover;
     background-position: center;
@@ -33,14 +34,19 @@
     justify-self: end;
   }
   .img {
-    max-width: 8rem;
-    padding: 2.2rem 2.8rem;
+    background-color: tomato;
+    width: 7rem;
+    height: 9rem;
+    margin: 3.6rem 2.8rem;
   }
 }
 
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 990px) {
   .main {
-    padding-top: 1.5rem;
+    padding-top: 4.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .frame {
     position: relative;
@@ -51,8 +57,8 @@
     background-position: center;
   }
   .img {
-    max-width: 8rem;
-    padding: 2.2rem 2.8rem;
+    max-width: 7rem;
+    padding: 3.6rem 2.8rem;
   }
 
   .removeFriend {
@@ -60,7 +66,7 @@
     height: 2rem;
     padding: 1rem;
     position: absolute;
-    top: 1rem;
+    top: 5rem;
     right: 1rem;
     border: none;
     background: transparent;
