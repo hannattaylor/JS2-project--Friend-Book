@@ -3,7 +3,6 @@ import { useState } from "react";
 import styles from "./OutputFields.module.css";
 
 export default function OutputFields(props) {
-  console.log(props);
   let prop = props.item[0];
 
   const [formLabel] = useState([
@@ -25,15 +24,12 @@ export default function OutputFields(props) {
   ]);
 
   const foundLabel = formLabel.find((el) => el[0] === props.item[0]);
-  console.log(foundLabel);
 
   if (props.item[0] !== "img") {
     return (
       <article className={styles[prop]}>
         <h3 className={styles.label}>{foundLabel[1]}</h3>
-        {/* <div className={styles.answerWrap}> */}
         <h5 className={styles.answer}>{props.item[1]}</h5>
-        {/* </div> */}
       </article>
     );
   }

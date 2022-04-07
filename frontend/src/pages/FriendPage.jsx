@@ -7,20 +7,16 @@ import styles from "./FriendPage.module.css";
 
 export default function Friends() {
   const navigate = useNavigate();
-  const state = useSelector((state) => {
-    return state.friendList;
-  });
-  const [page, setPage] = useState(0);
-
-  const [friend, setFriends] = useState([state]);
-
-  useEffect(() => {
-    let stateCopy = [...state];
-    setFriends(stateCopy);
-  }, [state]);
+  const dispatch = useDispatch();
 
   const location = useLocation();
   const clickedFriend = location.state;
+
+  const state = useSelector((state) => {
+    return state.friendList;
+  });
+
+  const [page, setPage] = useState(0);
 
   useEffect(() => {
     if (clickedFriend === null) {
@@ -30,8 +26,6 @@ export default function Friends() {
       setPage(index);
     }
   }, []);
-
-  const dispatch = useDispatch();
 
   function handleRemoveFriend(friend) {
     if (state.length === 1) {
@@ -56,6 +50,14 @@ export default function Friends() {
     }
   }
 
+  function goForward() {
+    if (page === state.length - 1) {
+      navigate("/newfriend");
+    } else {
+      setPage((prevNum) => Math.min(prevNum + 1, state.length - 1));
+    }
+  }
+
   return (
     <main className={styles.main}>
       <section className={styles.book}>
@@ -65,12 +67,7 @@ export default function Friends() {
         <button className={styles.prevButton} onClick={() => goBack()}>
           Tillbaka
         </button>
-        <button
-          className={styles.nextButton}
-          onClick={() =>
-            setPage((prevNum) => Math.min(prevNum + 1, state.length - 1))
-          }
-        >
+        <button className={styles.nextButton} onClick={() => goForward()}>
           Nästa
         </button>
       </section>

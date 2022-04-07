@@ -12,6 +12,7 @@
 
   .frame {
     height: 16rem;
+    margin-left: 1rem;
     background-image: url("../frame.svg");
     background-size: cover;
     background-position: center;
@@ -32,12 +33,37 @@
     background-repeat: no-repeat;
     align-self: center;
     justify-self: end;
+    cursor: pointer;
   }
+
   .img {
-    background-color: tomato;
+    background-color: transparent;
     width: 7rem;
     height: 9rem;
     margin: 3.6rem 2.8rem;
+  }
+  .lbContainer {
+    display: none;
+    position: absolute;
+    padding-bottom: 3rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.835);
+  }
+  .h1 {
+    font-size: 4rem;
+    color: #5d3b6e;
+  }
+  .button {
+    padding: 1rem 3rem;
+    margin: 2rem;
+    font-size: 2rem;
+    background-color: rgb(253, 150, 222);
+    color: #5d3b6e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
 }
 
@@ -62,17 +88,36 @@
   }
 
   .removeFriend {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     padding: 1rem;
-    position: absolute;
-    top: 5rem;
-    right: 1rem;
     border: none;
     background: transparent;
     background-image: url("../eraser\ \(1\).png");
     background-size: contain;
     background-repeat: no-repeat;
   }
-  /* GÖra en animation hover så den rör sig fram och tillbaka, fast på desktop  */
+  .lbContainer {
+    display: none;
+    position: absolute;
+    padding-bottom: 3rem;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.835);
+  }
+  .h1 {
+    font-size: 4rem;
+    color: #5d3b6e;
+  }
+  .button {
+    padding: 1rem 3rem;
+    margin: 2rem;
+    font-size: 2rem;
+    background-color: rgb(253, 150, 222);
+    color: #5d3b6e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 }

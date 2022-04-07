@@ -1,5 +1,3 @@
-//här ska vi lägga in label och input
-//samt skapa en lista med vad som ska stå på labels
 import React from "react";
 import { useState } from "react";
 import styles from "./InputFields.module.css";

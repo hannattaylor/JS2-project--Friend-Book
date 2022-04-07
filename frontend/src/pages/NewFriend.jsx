@@ -50,24 +50,23 @@ export default function NewFriend() {
     preview.src = src;
   }
 
+  //gör om array till object
   const obj = Object.fromEntries(friendForm);
-  console.log(obj);
 
   function required() {
-    let empty = friendForm.includes();
-    console.log(empty);
-
-    if (empty) {
-      console.log("det saknas data");
-    } else {
-      console.log("allt är ifyllt");
-      dispatch(addFriend(obj));
-      navigate("/tableoffriends");
-    }
+    dispatch(addFriend(obj));
+    navigate("/tableoffriends");
   }
 
   return (
     <main className={styles.main}>
+      <section className={styles.buttonsContainer}>
+        <button onClick={() => navigate(-1)} className={styles.prevButton}>
+          Tillbaka
+        </button>
+
+        <button className={styles.nextButton}>Nästa</button>
+      </section>
       <div className={styles.bookWrap}>
         <section className={styles.formWrap}>
           <section className={styles.frame}>

@@ -17,10 +17,17 @@ const friendReducer = (state = initialState, action) => {
         ],
       };
     case "UPDATE_FRIEND":
-      let foundFriend = state.find((el) => el.name === action.object.name);
-      console.log(foundFriend);
+      console.log(action.object);
+      let foundIndex = state.friendList.findIndex(
+        (el) => el.name === action.object.name
+      );
+      console.log(foundIndex);
+      let newState = state.friendList.slice();
+      newState.splice(foundIndex, 1, action.object);
+      console.log(newState);
       return {
         ...state,
+        friendList: newState,
       };
     default:
       return state;
